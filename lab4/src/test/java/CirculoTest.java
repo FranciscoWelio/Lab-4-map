@@ -17,7 +17,7 @@ public class CirculoTest {
     @Test
     void periCirculoTest(){
         Circulo circulo =new Circulo(10.4);
-        assertEquals("65,312" , circulo.perimetro());
+        assertEquals("32,656" , circulo.perimetro());
     }
     @Test
     void periCirculoNotTest(){

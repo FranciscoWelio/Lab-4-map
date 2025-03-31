@@ -31,7 +31,7 @@ public class Retangulo implements MetodosComuns {
     public String area() {
         double area;
         area = altura * largura;
-        DecimalFormat df = new DecimalFormat("#.###");
+        DecimalFormat df = new DecimalFormat("#.#");
         return df.format(area);
     }
 
@@ -39,7 +39,7 @@ public class Retangulo implements MetodosComuns {
     public String perimetro() {
         double peri;
         peri = (2* altura) + (2* largura);
-        DecimalFormat df = new DecimalFormat("#.###");
+        DecimalFormat df = new DecimalFormat("#.#");
         return df.format(peri);
     }
 
