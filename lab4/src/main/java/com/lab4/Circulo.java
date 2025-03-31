@@ -1,6 +1,8 @@
 package com.lab4;
 
-public class Circulo {
+import java.text.DecimalFormat;
+
+public class Circulo implements MetodosComuns{
     private double raio;
 
     public Circulo(double raio) {
@@ -15,15 +17,27 @@ public class Circulo {
         this.raio = raio;
     }
 
-    public double areaCirculo(double raio){
+    @Override
+    public String area() {
         double area;
-        area = 2 *3.14* raio;
-        return area;
+        area = 2 *3.14* getRaio();
+        DecimalFormat df = new DecimalFormat("#.###");
+        return df.format(area);
+
     }
-    public double periCiruclo(double raio){
+
+    @Override
+    public String perimetro() {
         double peri;
         peri = 3.14 * raio;
-        return peri;
+        DecimalFormat df = new DecimalFormat("#.###");
+        return df.format(peri);
+
+    }
+
+    @Override
+    public String formaToString() {
+        return "O círculo tem raio de: " + getRaio();
     }
 
 }

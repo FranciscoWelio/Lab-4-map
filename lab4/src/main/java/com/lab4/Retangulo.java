@@ -1,6 +1,8 @@
 package com.lab4;
 
-public class Retangulo {
+import java.text.DecimalFormat;
+
+public class Retangulo implements MetodosComuns {
     private double altura;
     private double largura;
 
@@ -25,15 +27,25 @@ public class Retangulo {
         this.largura = largura;
     }
 
-    public double areaRetangulo(double altura, double largura){
+    @Override
+    public String area() {
         double area;
         area = altura * largura;
-        return area;
+        DecimalFormat df = new DecimalFormat("#.###");
+        return df.format(area);
     }
-    public double periRetangulo(double altura, double largura){
+
+    @Override
+    public String perimetro() {
         double peri;
         peri = (2* altura) + (2* largura);
-        return peri;
+        DecimalFormat df = new DecimalFormat("#.###");
+        return df.format(peri);
+    }
+
+    @Override
+    public String formaToString() {
+        return "A altura do retângulo é: " + getAltura() + " E a largura é: " + getLargura();
     }
 
 }

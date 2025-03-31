@@ -1,6 +1,8 @@
 package com.lab4;
 
-public class Quadrado {
+import java.text.DecimalFormat;
+
+public class Quadrado implements MetodosComuns {
     private double lado;
 
     public Quadrado(double lado) {
@@ -14,15 +16,25 @@ public class Quadrado {
     public void setLado(double lado) {
         this.lado = lado;
     }
-    public double areaQuadrado(double lado){
+    @Override
+    public String area() {
         double area;
-        area = lado *2;
-        return area;
+        area = lado *lado;
+        DecimalFormat df = new DecimalFormat("#.###");
+        return df.format(area);
     }
-    public double periQuadrado(double lado){
+
+    @Override
+    public String perimetro() {
         double peri;
         peri = lado *4;
-        return peri;
+        DecimalFormat df = new DecimalFormat("#.###");
+        return df.format(peri);
+    }
+
+    @Override
+    public String formaToString() {
+        return "O tamanho dos quadrado é: " + getLado();
     }
    
 }
