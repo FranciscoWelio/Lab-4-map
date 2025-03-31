@@ -2,9 +2,9 @@ package com.lab4;
 
 
 public class BrincandoComAsFigurasGeometricas {
-	static Retangulo retangulo = new Retangulo(10, 50);
-	static Circulo circulo = new Circulo(5.6);
-	static Quadrado quadrado = new Quadrado(32.1);
+	static Retangulo retangulo = new Retangulo(0, 50);
+	static Circulo circulo = new Circulo(6);
+	static Quadrado quadrado = new Quadrado(10);
 	public static void main(String[] args) {
 
 		System.out.println(p("Retangulo"));

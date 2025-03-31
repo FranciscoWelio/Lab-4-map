@@ -6,6 +6,9 @@ public class Quadrado implements MetodosComuns {
     private double lado;
 
     public Quadrado(double lado) {
+        if (lado <= 0) {
+            throw new IllegalArgumentException("O lado do quadrado deve ser positivo.");
+        }
         this.lado = lado;
     }
 
@@ -14,12 +17,18 @@ public class Quadrado implements MetodosComuns {
     }
 
     public void setLado(double lado) {
+        if (lado <= 0) {
+            throw new IllegalArgumentException("O lado do quadrado deve ser positivo.");
+        }
         this.lado = lado;
     }
     @Override
     public String area() {
         double area;
-        area = lado *lado;
+        if (getLado() <= 0) {
+            throw new IllegalArgumentException("O lado do quadrado deve ser positivo.");
+        }
+        area = getLado() *getLado();
         DecimalFormat df = new DecimalFormat("#.###");
         return df.format(area);
     }
@@ -27,14 +36,20 @@ public class Quadrado implements MetodosComuns {
     @Override
     public String perimetro() {
         double peri;
-        peri = lado *4;
+        if (getLado() <= 0) {
+            throw new IllegalArgumentException("O lado do quadrado deve ser positivo.");
+        }
+        peri = getLado() *4;
         DecimalFormat df = new DecimalFormat("#.###");
         return df.format(peri);
     }
 
     @Override
     public String formaToString() {
-        return "O tamanho dos quadrado é: " + getLado();
+        if (getLado() <= 0) {
+            throw new IllegalArgumentException("O lado do quadrado deve ser positivo.");
+        }
+        return "O tamanho dos lados do quadrado é: " + getLado();
     }
    
 }
