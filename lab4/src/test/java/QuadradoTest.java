@@ -1,5 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.lab4.Quadrado;
 import org.junit.jupiter.api.Test;
@@ -29,5 +30,12 @@ public class QuadradoTest {
         assertNotEquals("61,8", quadrado.perimetro());
 
     }
-
+    @Test
+    void quadradoExceptionTest() throws Exception{
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Quadrado(0);
+        });
+        
+        assertEquals("O lado do quadrado deve ser positivo.",exception.getMessage());
+    }
 }

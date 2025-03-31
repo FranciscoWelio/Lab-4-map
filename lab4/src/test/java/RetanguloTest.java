@@ -1,7 +1,9 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
+
 
 import com.lab4.Retangulo;
 
@@ -25,5 +27,13 @@ public class RetanguloTest {
     void periRetanguloNotTest(){
         Retangulo retangulo = new Retangulo(30, 20);
         assertNotEquals("400" , retangulo.perimetro());
+    }
+    @Test
+    void retanguloExceptionTest() throws Exception{
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new Retangulo(0, 20);
+        });
+        
+        assertEquals("A altura e a largura do retângulo devem ser positivas.",exception.getMessage());
     }
 }
